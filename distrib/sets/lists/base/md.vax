@@ -5,7 +5,7 @@
 ./sbin/ldconfig					base-sysutil-root	pic
 ./usr/libexec/ld.so				base-sys-shlib		pic
 ./usr/mdec/boot					base-sysutil-bin
-./usr/mdec/boot.mop				base-obsolete		obsolete
+./usr/mdec/boot.mop				base-sysutil-bin
 ./usr/mdec/hpboot				base-sysutil-bin
 ./usr/mdec/installboot				base-obsolete		obsolete
 ./usr/mdec/raboot				base-sysutil-bin
