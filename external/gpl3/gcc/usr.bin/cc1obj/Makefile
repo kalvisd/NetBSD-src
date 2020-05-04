@@ -49,12 +49,12 @@ COPTS.objc-next-runtime-abi-01.cc+=	-Wno-error=stack-protector
 .if ${MACHINE_ARCH} == "vax" && 0
 COPTS.c-decl.c+=-O0
 COPTS.c-typeck.c+=-O0
-COPTS.c-array-notation.c+=-O0
+#COPTS.c-array-notation.c+=-O0
 COPTS.c-common.c+=-O0
 COPTS.c-ada-spec.c+=-O0
-COPTS.cilk.c+=-O0
-COPTS.c-ubsan.c+=-O0
-COPTS.cc1obj-checksum.c+=-O0
+#COPTS.cilk.c+=-O0
+#COPTS.c-ubsan.c+=-O0
+#COPTS.cc1obj-checksum.c+=-O0
 .endif
 
 .if ${MACHINE_ARCH} == "mipseb" || ${MACHINE_ARCH} == "mipsel"
