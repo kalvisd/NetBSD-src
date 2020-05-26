@@ -48,11 +48,11 @@ BUILDSYMLINKS+= ${GNUHOSTDIST}/gcc/config/sh/sh-c.cc sh-c.c
 .endif
 
 .if ${MACHINE_CPU} == "vax" && 0
-COPTS.c-decl.c+=-O0
-COPTS.c-typeck.c+=-O0
+#COPTS.c-decl.c+=-O0
+#COPTS.c-typeck.c+=-O0
 #COPTS.c-array-notation.c+=-O0
-COPTS.c-common.c+=-O0
-COPTS.c-ada-spec.c+=-O0
+#COPTS.c-common.c+=-O0
+#COPTS.c-ada-spec.c+=-O0
 #COPTS.cilk.c+=-O0
 #COPTS.c-ubsan.c+=-O0
 #COPTS.cc1-checksum.c+=-O0
