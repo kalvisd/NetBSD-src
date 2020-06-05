@@ -21,11 +21,6 @@ CPPFLAGS+=	-DPREFIX=\"/usr\"
 .include "../Makefile.libcpp"
 .include "../Makefile.libdecnumber"
 
-.if ${MACHINE_ARCH} == "vax" && 0
-COPTS.lto-lang.c+=-O0
-COPTS.lto-symtab.c+=-O0
-.endif
-
 LDADD+= ${LIBIBERTYOBJ}/libiberty.a
 DPADD+= ${LIBIBERTYOBJ}/libiberty.a
 LDADD+=	${LIBIBERTY} ${LIBMPC} ${LIBMPFR} ${LIBGMP} -lintl -lz -lm
