@@ -14,9 +14,6 @@ SRCS=		decNumber.c decContext.c decimal32.c decimal64.c decimal128.c
 CPPFLAGS+=	-I${.CURDIR}/arch/${GCC_MACHINE_ARCH} -I${DIST}/libdecnumber
 CPPFLAGS+=	-I${DIST}/libgcc
 
-.if ${MACHINE_ARCH} == "vax" && 0
-COPTS.decNumber.c=-O0
-.endif
 
 .include <bsd.lib.mk>
 
