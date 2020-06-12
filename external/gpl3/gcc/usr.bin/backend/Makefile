@@ -512,7 +512,6 @@ i386.d i386.o: pass_manager.h
 .if ${GCC_MACHINE_ARCH} == "vax"
 CPPFLAGS+=-I${.CURDIR}/../../lib/libgcc/libgcov/arch/${GCC_MACHINE_ARCH}
 
-COPTS.dse.c+=-O1					# XXX port-vax/51967
 COPTS.expmed.c+=-Wno-error=tautological-compare
 COPTS.expr.c+=-Wno-error=tautological-compare
 .endif
