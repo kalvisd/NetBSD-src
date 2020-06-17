@@ -52,11 +52,11 @@ LIBDPLIBS+= pthread ${NETBSDSRCDIR}/lib/libpthread
 CPPFLAGS+=-DCAN_SANITIZE_UB=0
 
 .if ${MACHINE_ARCH} == "vax"
-COPTS.asan_allocator.cpp += -O1
-COPTS.asan_report.cpp += -O1
-COPTS.sanitizer_file.cpp += -O1
-COPTS.ubsan_diag.cpp += -O1
-COPTS.ubsan_init.cpp += -O1
+#COPTS.asan_allocator.cc += -O1
+#COPTS.asan_report.cc += -O1
+#COPTS.sanitizer_file.cc += -O1
+#COPTS.ubsan_diag.cc += -O1
+#COPTS.ubsan_init.cc += -O1
 .endif
 
 .if ${MACHINE_ARCH} == "mipsel" || ${MACHINE_ARCH} == "mipseb"
