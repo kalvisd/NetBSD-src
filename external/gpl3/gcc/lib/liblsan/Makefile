@@ -20,11 +20,6 @@ LSAN_SRCS+= \
 	lsan_thread.cpp \
 	lsan_posix.cpp
 
-.if ${MACHINE_ARCH} == "vax"
-#COPTS.lsan_allocator.cpp += -O1
-#COPTS.sanitizer_file.cpp += -O1
-.endif
-
 LIB=	lsan
 SRCS+=	${LSAN_SRCS}
 LIBDPLIBS+= m ${NETBSDSRCDIR}/lib/libm

@@ -51,14 +51,6 @@ LIBDPLIBS+= m  ${NETBSDSRCDIR}/lib/libm
 LIBDPLIBS+= pthread ${NETBSDSRCDIR}/lib/libpthread
 CPPFLAGS+=-DCAN_SANITIZE_UB=0
 
-.if ${MACHINE_ARCH} == "vax"
-#COPTS.asan_allocator.cc += -O1
-#COPTS.asan_report.cc += -O1
-#COPTS.sanitizer_file.cc += -O1
-#COPTS.ubsan_diag.cc += -O1
-#COPTS.ubsan_init.cc += -O1
-.endif
-
 .if ${MACHINE_ARCH} == "mipsel" || ${MACHINE_ARCH} == "mipseb"
 COPTS.asan_interceptors.cpp += -O1
 .endif
