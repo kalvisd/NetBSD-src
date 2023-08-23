@@ -1147,6 +1147,9 @@ gpx_getcmap(struct gpx_screen *ss, struct wsdisplay_cmap *cm)
 	if (index >= colcount || count > colcount - index)
 		return EINVAL;
 
+	if (count == 0)
+		return 0;
+
 	/* extract reds */
 	c = ss->ss_cmap + 0 + index * 3;
 	for (i = count, r = ramp; i != 0; i--)
