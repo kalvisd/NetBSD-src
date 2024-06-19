@@ -317,6 +317,14 @@ loadpcs(void)
 	 * Load PCS microcode 20 bits at a time.
 	 */
 	ip = (int *)PCS_PCSADDR;
+
+	/*
+	 * XXXGCC12
+	 * GCC2 blames pointer access to 0-th page, [0, 0xfff] as
+	 * -Warray-bounds. Just silence as it is harmless.
+	 */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Warray-bounds"
 	jp = (int *)1024;
 	for (i=j=0; j < PCS_MICRONUM * 4; i+=20, j++) {
 		extzv(i,*jp,*ip++,20);
@@ -326,6 +334,8 @@ loadpcs(void)
 	 * Enable PCS.
 	 */
 	i = *jp;		/* get 1st 20 bits of microcode again */
+#pragma GCC diagnostic pop
+
 	i &= 0xfffff;
 	i |= PCS_ENABLE;	/* reload these bits with PCS enable set */
 	*((int *)PCS_PCSADDR) = i;
