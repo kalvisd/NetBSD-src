@@ -51,4 +51,6 @@ install:
 VERSIONFLAGS+=-n
 .include "${S}/conf/newvers_stand.mk"
 
+COPTS.autoconf.c+=	${CC_WNO_ARRAY_BOUNDS}
+
 .include <bsd.prog.mk>
