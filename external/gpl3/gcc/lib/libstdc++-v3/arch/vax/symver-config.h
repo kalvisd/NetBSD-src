@@ -33,7 +33,7 @@
 #define HAVE_ATAN2F 1
 
 /* Define to 1 if you have the `atan2l' function. */
-/* #undef HAVE_ATAN2L */
+#define HAVE_ATAN2L 1
 
 /* Define to 1 if you have the `atanf' function. */
 #define HAVE_ATANF 1
@@ -69,7 +69,7 @@
 /* #undef HAVE_COSHL */
 
 /* Define to 1 if you have the `cosl' function. */
-/* #undef HAVE_COSL */
+#define HAVE_COSL 1
 
 /* Define to 1 if you have the declaration of `strnlen', and to 0 if you
    don't. */
@@ -145,10 +145,10 @@
 /* #undef HAVE_FP_H */
 
 /* Define to 1 if you have the `frexpf' function. */
-/* #undef HAVE_FREXPF */
+#define HAVE_FREXPF 1
 
 /* Define to 1 if you have the `frexpl' function. */
-/* #undef HAVE_FREXPL */
+#define HAVE_FREXPL 1
 
 /* Define if getentropy is available in <unistd.h>. */
 #define HAVE_GETENTROPY 1
@@ -341,7 +341,7 @@
 #define HAVE_SINCOSF 1
 
 /* Define to 1 if you have the `sincosl' function. */
-/* #undef HAVE_SINCOSL */
+#define HAVE_SINCOSL 1
 
 /* Define to 1 if you have the `sinf' function. */
 #define HAVE_SINF 1
@@ -353,7 +353,7 @@
 /* #undef HAVE_SINHL */
 
 /* Define to 1 if you have the `sinl' function. */
-/* #undef HAVE_SINL */
+#define HAVE_SINL 1
 
 /* Defined if sleep exists. */
 /* #undef HAVE_SLEEP */
@@ -480,7 +480,7 @@
 /* #undef HAVE_TANHL */
 
 /* Define to 1 if you have the `tanl' function. */
-/* #undef HAVE_TANL */
+#define HAVE_TANL 1
 
 /* Define to 1 if you have the <tgmath.h> header file. */
 #define HAVE_TGMATH_H 1

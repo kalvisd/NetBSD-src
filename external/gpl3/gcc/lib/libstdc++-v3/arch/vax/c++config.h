@@ -878,7 +878,7 @@ namespace std
 #define _GLIBCXX_HAVE_ATAN2F 1
 
 /* Define to 1 if you have the `atan2l' function. */
-/* #undef _GLIBCXX_HAVE_ATAN2L */
+#define _GLIBCXX_HAVE_ATAN2L 1
 
 /* Define to 1 if you have the `atanf' function. */
 #define _GLIBCXX_HAVE_ATANF 1
@@ -914,7 +914,7 @@ namespace std
 /* #undef _GLIBCXX_HAVE_COSHL */
 
 /* Define to 1 if you have the `cosl' function. */
-/* #undef _GLIBCXX_HAVE_COSL */
+#define _GLIBCXX_HAVE_COSL 1
 
 /* Define to 1 if you have the declaration of `strnlen', and to 0 if you
    don't. */
@@ -990,10 +990,10 @@ namespace std
 /* #undef _GLIBCXX_HAVE_FP_H */
 
 /* Define to 1 if you have the `frexpf' function. */
-/* #undef _GLIBCXX_HAVE_FREXPF */
+#define _GLIBCXX_HAVE_FREXPF 1
 
 /* Define to 1 if you have the `frexpl' function. */
-/* #undef _GLIBCXX_HAVE_FREXPL */
+#define _GLIBCXX_HAVE_FREXPL 1
 
 /* Define if getentropy is available in <unistd.h>. */
 #define _GLIBCXX_HAVE_GETENTROPY 1
@@ -1186,7 +1186,7 @@ namespace std
 #define _GLIBCXX_HAVE_SINCOSF 1
 
 /* Define to 1 if you have the `sincosl' function. */
-/* #undef _GLIBCXX_HAVE_SINCOSL */
+#define _GLIBCXX_HAVE_SINCOSL 1
 
 /* Define to 1 if you have the `sinf' function. */
 #define _GLIBCXX_HAVE_SINF 1
@@ -1198,7 +1198,7 @@ namespace std
 /* #undef _GLIBCXX_HAVE_SINHL */
 
 /* Define to 1 if you have the `sinl' function. */
-/* #undef _GLIBCXX_HAVE_SINL */
+#define _GLIBCXX_HAVE_SINL 1
 
 /* Defined if sleep exists. */
 /* #undef _GLIBCXX_HAVE_SLEEP */
@@ -1325,7 +1325,7 @@ namespace std
 /* #undef _GLIBCXX_HAVE_TANHL */
 
 /* Define to 1 if you have the `tanl' function. */
-/* #undef _GLIBCXX_HAVE_TANL */
+#define _GLIBCXX_HAVE_TANL 1
 
 /* Define to 1 if you have the <tgmath.h> header file. */
 #define _GLIBCXX_HAVE_TGMATH_H 1
