@@ -545,3 +545,7 @@ CFLAGS+= -fno-exceptions -fno-rtti -fasynchronous-unwind-tables
 .if ${MACHINE_CPU} == "aarch64"
 .PATH: ${DIST}/gcc/config/arm
 .endif
+
+.if ${MACHINE} == "vax"
+CPPFLAGS+=	-DNB_FIX_VAX_BACKEND
+.endif
