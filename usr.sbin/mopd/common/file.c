@@ -36,7 +36,7 @@ __RCSID("$NetBSD: file.c,v 1.17 2020/10/27 17:16:24 abs Exp $");
 #include <stddef.h>
 
 #ifndef NOAOUT
-# if defined(__NetBSD__) || defined(__OpenBSD__)
+# if defined (HAVE_NBTOOL_CONFIG_H) || defined(__NetBSD__) || defined(__OpenBSD__)
 #  include <sys/exec_aout.h>
 # endif
 # if defined(__bsdi__)
@@ -54,7 +54,7 @@ __RCSID("$NetBSD: file.c,v 1.17 2020/10/27 17:16:24 abs Exp $");
 #endif /* NOAOUT */
 
 #ifndef NOELF
-# if defined(__NetBSD__)
+# if defined (HAVE_NBTOOL_CONFIG_H) || defined(__NetBSD__)
 #  include <sys/exec_elf.h>
 # else
 #  define NOELF

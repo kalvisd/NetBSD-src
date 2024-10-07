@@ -213,6 +213,10 @@ SUBDIR+=	amiga-txlt
 SUBDIR+=	hp300-mkboot
 .endif
 
+.if ${MACHINE} == "vax"
+SUBDIR+=	libmopcopy vax-mopcopy
+.endif
+
 .if ${MACHINE} == "evbarm" \
     && ${MACHINE_CPU} == "arm" \
     && ${TARGET_ENDIANNESS} == "1234"

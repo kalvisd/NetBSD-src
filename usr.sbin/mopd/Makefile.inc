@@ -9,8 +9,10 @@ CPPFLAGS+= -DNOAOUT
 
 LIBCOMMON != cd ${.CURDIR}/../common && ${PRINTOBJDIR}
 CPPFLAGS+=-I${.CURDIR}/../common
+.ifndef HOSTPROG
 DPADD+=	${LIBCOMMON}/libcommon.a
 LDADD+=	-L${LIBCOMMON} -lcommon
+.endif
 
 .if exists(${.CURDIR}/../../Makefile.inc)
 .include "${.CURDIR}/../../Makefile.inc"
