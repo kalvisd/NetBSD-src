@@ -29,8 +29,12 @@ HOST_CPPFLAGS+=	-DHAVE_NBTOOL_CONFIG_H=1
 
 # VAX binaries are now ELF, so no need to support a.out format
 HOST_CPPFLAGS+=	-DNOAOUT
+HOST_CFLAGS+=	-g
 
 .PATH:	${LIBMOPCOPY_DIR}
+
+STRIPFLAG=
+STRIP=		echo
 
 realinstall: install.host
 install.host: ${TOOLDIR}/lib/libmopcopy.a
