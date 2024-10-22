@@ -651,6 +651,9 @@ TOOL_TBL		Format tables for groff.  [tbl]
 
 TOOL_UUDECODE		Uudecode a binary file.  [uudecode]
 
+TOOL_VAXMOPCOPY		Creates a MOP image from another executable format.
+			[vax-mopcopy]
+
 TOOL_VGRIND		Grind nice listings of programs.  [vgrind -f]
 
 TOOL_ZIC		Time zone compiler.  [zic]
