@@ -5,7 +5,6 @@ LIBMOPCOPY_DIR=	${NETBSDSRCDIR}/usr.sbin/mopd/common
 
 .include <bsd.hostinit.mk>
 
-# for now
 SRCS=		cmp.c  \
 		get.c \
 		nma.c \
