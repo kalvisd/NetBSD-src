@@ -54,23 +54,5 @@
 #endif
 
 #ifdef __linux__
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
-
-extern char *__progname;
-static inline const char *
-getprogname(void) {
-	return __progname;
-}
-
-static inline char *
-strlcpy(char *d, const char *s, size_t l)
-{
-	if (l == 0)
-		return NULL;
-	strncpy(d, s, l);
-	d[l - 1] = '\0';
-	return d;
-}
+# include <bsd/bsd.h>
 #endif

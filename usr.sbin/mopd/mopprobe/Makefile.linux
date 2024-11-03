@@ -2,7 +2,7 @@
 SRCS=mopprobe.c
 OBJS=${SRCS:.c=.o}
 
-LDLIBS+=../common/libcommon.a
+LDLIBS+=../common/libcommon.a -lbsd
 CFLAGS+=-I../common
 
 mopprobe: ${OBJS}
