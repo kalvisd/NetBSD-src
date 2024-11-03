@@ -64,13 +64,13 @@ getprogname(void) {
 	return __progname;
 }
 
-static inline char *
+static inline size_t
 strlcpy(char *d, const char *s, size_t l)
 {
 	if (l == 0)
 		return NULL;
 	strncpy(d, s, l);
 	d[l - 1] = '\0';
-	return d;
+	return strlen(s);
 }
 #endif
