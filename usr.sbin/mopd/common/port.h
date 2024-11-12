@@ -54,9 +54,9 @@
 #endif
 
 #ifdef __linux__
-#include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
+/* #include <stdio.h> */
+/* #include <string.h> */
+/* #include <sys/types.h> */
 
 extern char *__progname;
 static inline const char *
