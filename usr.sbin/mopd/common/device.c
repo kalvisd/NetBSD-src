@@ -89,9 +89,10 @@ deviceOpen(const char *ifname, u_short proto, int trans)
 {
 	struct if_info *p, tmp;
 
-	strlcpy(tmp.if_name, ifname, sizeof(tmp.if_name));
+	strncpy(tmp.if_name, ifname, sizeof(tmp.if_name) - 1);
+	tmp.if_name[sizeof(tmp.if_name) - 1] = '\0';
 	tmp.iopen   = pfInit;
-	
+
 	switch (proto) {
 	case MOP_K_PROTO_RC:
 		tmp.read = mopReadRC;
@@ -113,7 +114,8 @@ deviceOpen(const char *ifname, u_short proto, int trans)
 		p->next = iflist;
 		iflist = p;
 
-		strlcpy(p->if_name, tmp.if_name, sizeof(p->if_name));
+		strncpy(p->if_name, tmp.if_name, sizeof(p->if_name) - 1);
+		p->if_name[sizeof(p->if_name) - 1] = '\0';
 		p->iopen   = tmp.iopen;
 		p->write   = pfWrite;
 		p->read    = tmp.read;
