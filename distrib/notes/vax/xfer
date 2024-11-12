@@ -179,11 +179,6 @@ documentation that came with it.
 on
 .Tn SunOS . )
 .Pp
-More details are available at
-.Lk https://www.NetBSD.org/docs/network/netboot/intro.vax.html
-and
-.Lk https://www.NetBSD.org/docs/network/netboot/
-.Pp
 You also must install a MOP loader.
 If you are booting from another
 .Nx
@@ -211,3 +206,11 @@ The boot program is also available as a MOP image, in
 .Pp
 Use this version if your MOP loader cannot interpret ELF images.
 .Pp
+More details are available at
+.Lk https://www.NetBSD.org/docs/network/netboot/intro.vax.html
+and
+.Lk https://www.NetBSD.org/docs/network/netboot/
+.Pp
+There is also a very good (if somewhat out of date) FAQ, describing
+the process of netbooting VAXen from many different OSes, at
+.Lk https://web.archive.org/web/20031004185104/http://world.std.com/~bdc/projects/vaxen/old/VAX-netboot-HOWTO.html
