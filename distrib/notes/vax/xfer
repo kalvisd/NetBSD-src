@@ -180,7 +180,7 @@ on
 .Tn SunOS . )
 .Pp
 More details are available at
-.Lk https://www.netbsd.org/docs/network/netboot/intro.vax.html
+.Lk https://www.NetBSD.org/docs/network/netboot/intro.vax.html
 and
 .Lk https://www.NetBSD.org/docs/network/netboot/
 .Pp
