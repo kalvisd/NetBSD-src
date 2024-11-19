@@ -29,7 +29,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "port.h"
+#if defined (HAVE_NBTOOL_CONFIG_H)
+# include "nbtool_config.h"
+#else
+# include "port.h"
+#endif /* defined (HAVE_NBTOOL_CONFIG_H) */
 #ifndef lint
 __RCSID("$NetBSD: log.c,v 1.4 2016/06/08 01:11:49 christos Exp $");
 #endif
