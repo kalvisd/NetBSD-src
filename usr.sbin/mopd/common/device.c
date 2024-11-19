@@ -91,6 +91,7 @@ deviceOpen(const char *ifname, u_short proto, int trans)
 
 	strlcpy(tmp.if_name, ifname, sizeof(tmp.if_name));
 	tmp.iopen   = pfInit;
+	tmp.fd      = -1;
 	
 	switch (proto) {
 	case MOP_K_PROTO_RC:
