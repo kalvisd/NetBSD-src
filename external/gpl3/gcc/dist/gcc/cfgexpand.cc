@@ -6573,11 +6573,13 @@ stack_protect_prologue (void)
   rtx x, y;
 
   crtl->stack_protect_guard_decl = guard_decl;
-  x = expand_normal (crtl->stack_protect_guard);
+  x = NULL_RTX;
 
   if (targetm.have_stack_protect_combined_set () && guard_decl)
     {
       gcc_assert (DECL_P (guard_decl));
+      if (x != NULL_RTX)
+	x = expand_normal (crtl->stack_protect_guard);
       y = DECL_RTL (guard_decl);
 
       /* Allow the target to compute address of Y and copy it to X without
@@ -6591,22 +6593,29 @@ stack_protect_prologue (void)
 	}
     }
 
-  if (guard_decl)
-    y = expand_normal (guard_decl);
-  else
-    y = const0_rtx;
-
   /* Allow the target to copy from Y to X without leaking Y into a
      register.  */
   if (targetm.have_stack_protect_set ())
-    if (rtx_insn *insn = targetm.gen_stack_protect_set (x, y))
-      {
-	emit_insn (insn);
-	return;
-      }
+    {
+      if (x != NULL_RTX)
+	x = expand_normal (crtl->stack_protect_guard);
+      if (guard_decl)
+	y = expand_normal (guard_decl);
+      else
+	y = const0_rtx;
 
-  /* Otherwise do a straight move.  */
-  emit_move_insn (x, y);
+      if (rtx_insn *insn = targetm.gen_stack_protect_set (x, y))
+	{
+	  emit_insn (insn);
+	  return;
+	}
+    }
+
+  /* Otherwise generate and expand an assignment expression.  This
+     generates code that works in the case where the stack is aligned
+     differently to the guard variable (e.g. on m68k). */
+  expand_assignment(crtl->stack_protect_guard,
+		    crtl->stack_protect_guard_decl, false);
 }
 
 /* Translate the intermediate representation contained in the CFG
