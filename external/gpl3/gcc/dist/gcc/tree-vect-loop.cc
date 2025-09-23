@@ -7142,7 +7142,7 @@ vectorize_fold_left_reduction (loop_vec_info loop_vinfo,
      The former is a gimple assign with binary rhs and the latter is a
      gimple call with four arguments.  */
   gcc_assert (num_ops == 2 || num_ops == 4);
-  tree op0, opmask;
+  tree op0, opmask = NULL;
   if (!is_cond_op)
     op0 = ops[1 - reduc_index];
   else
