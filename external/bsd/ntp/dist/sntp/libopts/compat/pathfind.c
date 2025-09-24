@@ -203,10 +203,7 @@ canonicalize_pathname( char *path )
         if (result[i] == '.') {
             /* Handle `./'. */
             if (result[i + 1] == '/') {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wrestrict"
                 strcpy( result + i, result + i + 1 );
-#pragma GCC diagnostic pop
                 i = (start < 0) ? 0 : start;
                 continue;
             }
@@ -216,10 +213,7 @@ canonicalize_pathname( char *path )
                 (result[i + 2] == '/' || !result[i + 2])) {
                 while (--start > -1 && result[start] != '/')
                     ;
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wrestrict"
                 strcpy( result + start + 1, result + i + 2 );
-#pragma GCC diagnostic pop
                 i = (start < 0) ? 0 : start;
                 continue;
             }
