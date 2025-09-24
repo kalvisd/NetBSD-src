@@ -19,6 +19,7 @@ SRCS=libopts.c
 COPTS.libopts.c+=	 -DPOSIX_SHELL="\"/bin/sh\"" -Wno-format-nonliteral
 
 COPTS.libopts.c+=	${${ACTIVE_CC} == "gcc":? -Wno-format-contains-nul :}
+COPTS.libopts.c+=	${${ACTIVE_CC} == "gcc":? -Wno-restrict :}
 COPTS.libopts.c+=	${${ACTIVE_CC} == "clang":? -Wno-format :}
 COPTS.libopts.c+=	${CC_WNO_FORMAT_OVERFLOW}
 
