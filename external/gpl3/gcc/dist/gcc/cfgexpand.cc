@@ -2075,8 +2075,11 @@ create_stack_guard (void)
 {
   tree guard = build_decl (DECL_SOURCE_LOCATION (current_function_decl),
 			   VAR_DECL, NULL, ptr_type_node);
+  machine_mode mode = TYPE_MODE (TREE_TYPE (guard));
   TREE_THIS_VOLATILE (guard) = 1;
   TREE_USED (guard) = 1;
+  // record the alignment requirements for this stack slot
+  record_alignment_for_reg_var (GET_MODE_ALIGNMENT (mode));
   expand_one_stack_var (guard);
   crtl->stack_protect_guard = guard;
 }
