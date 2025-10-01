@@ -6578,7 +6578,7 @@ stack_protect_prologue (void)
   if (targetm.have_stack_protect_combined_set () && guard_decl)
     {
       gcc_assert (DECL_P (guard_decl));
-      if (x != NULL_RTX)
+      if (x == NULL_RTX)
 	x = expand_normal (crtl->stack_protect_guard);
       y = DECL_RTL (guard_decl);
 
@@ -6597,7 +6597,7 @@ stack_protect_prologue (void)
      register.  */
   if (targetm.have_stack_protect_set ())
     {
-      if (x != NULL_RTX)
+      if (x == NULL_RTX)
 	x = expand_normal (crtl->stack_protect_guard);
       if (guard_decl)
 	y = expand_normal (guard_decl);
